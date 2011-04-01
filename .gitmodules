@@ -1,3 +1,0 @@
-[submodule "librng"]
-	path = librng
-	url = git://github.com/bhickey/librng.git
