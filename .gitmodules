@@ -1,0 +1,3 @@
+[submodule "src/librng"]
+	path = src/librng
+	url = git://github.com/bhickey/librng.git
