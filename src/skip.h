@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include "MersenneTwister.h"
+#include "librng/rng.h"
 
 #define SKIPLIST_MAX_LEVEL 31
 
@@ -31,10 +31,10 @@ void set_next_skipnode(skipnode*, int, skipnode*);
 skiplist make_skiplist(size_t);
 void destroy_skiplist(skiplist);
 
-void insert(skiplist, unsigned long, void*, MTRand*);
+void insert(skiplist, unsigned long, void*, RNG*);
 void remove(skiplist, unsigned long);
 void* find(skiplist, unsigned long);
 
-int nodeLevel(MTRand*);
+int nodeLevel(RNG*);
 
 #endif

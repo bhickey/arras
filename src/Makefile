@@ -15,6 +15,8 @@ else
 	CFLAGS	:= ${RELEASE_FLAGS}
 endif
 
+DEPENDENCIES := ${LIBRNG}
+
 BUILD_DIR  := build
 ARRAS_SRCS := skip.c
 ARRAS_OBJS := $(addsuffix .o, $(basename ${ARRAS_SRCS}))
