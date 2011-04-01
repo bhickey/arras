@@ -1,12 +1,12 @@
 ################################################################################
-
+# Arras, a BSD licensed 'big array'
 ################################################################################
 
-DEBUG	:= YES
+DEBUG := YES
 
-CC		:= g++
+CC := g++
 
-DEBUG_FLAGS		:=  -Wall -Wno-format -g -DDEBUG
+DEBUG_FLAGS	:=  -Wall -Wno-format -g -DDEBUG
 RELEASE_FLAGS	:=	-Wall -Wno-unknown-pramas -Wno-format -O3
 
 ifeq (YES, ${DEBUG})
