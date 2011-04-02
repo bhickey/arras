@@ -114,7 +114,7 @@ void skiplist_remove_test() {
 
     void* dat = find(s, target_key);
     assert(dat != NULL);
-    remove(s, target_key);
+    destroy_skipnode(remove(s, target_key), sizeof(int));
     dat = find(s, target_key);
     assert(dat == NULL);
 

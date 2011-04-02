@@ -98,8 +98,9 @@ void* find(skiplist sk, unsigned long key)
 }
 
 
-void remove(skiplist sk, unsigned long key)
+skipnode* remove(skiplist sk, unsigned long key)
 {
+        skipnode* return_node = NULL;
         skipnode* search_node = sk.head;
         int search_level = SKIPLIST_MAX_LEVEL;
         do {
@@ -108,15 +109,17 @@ void remove(skiplist sk, unsigned long key)
                         if( key < next_node->key){ --search_level; } 
                         else if( key > next_node->key){ search_node = next_node; } 
                         else if( key == next_node->key ){
+                                return_node = next_node;
                                 skipnode* next_next_node = next_skipnode(next_node, search_level);
                                 set_next_skipnode(search_node, search_level, next_next_node);
-                                if( search_level == 0 ){ destroy_skipnode(next_node, sk.data_sz); }
                                 --search_level;
                         }
                 } else {
                         --search_level;
                 }
         } while( search_level >= 0 );
+
+        return return_node;
 }
 
 

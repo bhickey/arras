@@ -34,7 +34,7 @@ void destroy_skiplist(skiplist);
 
 void insert(skiplist, unsigned long, void*, RNG*);
 void insert_node(skipnode*, skipnode*, int);
-void remove(skiplist, unsigned long);
+skipnode* remove(skiplist, unsigned long);
 void* find(skiplist, unsigned long);
 
 int nodeLevel(RNG*);
