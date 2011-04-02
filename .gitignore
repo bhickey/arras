@@ -1,0 +1,8 @@
+*.sw[a-z]
+*.o
+*.so
+*.slo
+*.lo
+*.lai
+*.la
+*.a

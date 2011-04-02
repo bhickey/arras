@@ -27,14 +27,12 @@ void set_next_skipnode(skipnode* node, int level, skipnode* next)
     *slot = next; 
 }
 
-int nodeLevel(MTRand* rng)
+int nodeLevel(RNG* rng)
 {
-    unsigned long b = 0x7FFFFFFF & rng->randInt() & rng->randInt();
-    b = ((b + 1) ^ b) - 1;
-    return __builtin_popcount(b);
+    return (rng->get_geometric() & rng->get_geometric());
 }
 
-void insert(skiplist sk, unsigned long key, void* data, MTRand* rng)
+void insert(skiplist sk, unsigned long key, void* data, RNG* rng)
 {
     int insertion_level = nodeLevel(rng);
     skipnode* new_node = make_skipnode(key, insertion_level, sk.data_sz);
