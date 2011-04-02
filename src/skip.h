@@ -26,12 +26,14 @@ void destroy_skipnode(skipnode*, size_t);
 void* skipnode_data(skipnode*, size_t);
 skipnode* next_skipnode(skipnode*, int);
 void set_next_skipnode(skipnode*, int, skipnode*);
+void articulate_nodes(skipnode*, skipnode*, skipnode*, int);
 
 // Operations on skip lists
 skiplist make_skiplist(size_t);
 void destroy_skiplist(skiplist);
 
 void insert(skiplist, unsigned long, void*, RNG*);
+void insert_node(skipnode*, skipnode*, int);
 void remove(skiplist, unsigned long);
 void* find(skiplist, unsigned long);
 

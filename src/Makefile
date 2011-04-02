@@ -6,7 +6,7 @@ DEBUG := YES
 
 CC := g++
 
-DEBUG_FLAGS   := -Wall -pedantic -Wno-format -g
+DEBUG_FLAGS   := -Wall -pedantic -Wno-format -g -DDEBUG
 RELEASE_FLAGS := -Wall -pedantic -Wno-unknown-pramas -Wno-format -O3
 
 ifeq (YES, ${DEBUG})
@@ -47,6 +47,7 @@ clean:
 	make -C ../extern/librng/ clean
 	rm librng
 	rm -f ${ARRAS_OBJS}
+	rm librng.so
 
 %.o : ${LIBRNG} %.c
 	${CC} -c ${CFLAGS} $< -o $@
